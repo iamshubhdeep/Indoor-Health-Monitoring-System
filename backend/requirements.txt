@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+bcrypt
+python-jose[cryptography]
+python-multipart
+langchain
+langchain-openai
+langchain-google-genai
+scikit-learn
+pandas
+
+bleak
+aiohttp
+openai
+huggingface_hub

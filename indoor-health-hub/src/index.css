@@ -1,0 +1,156 @@
+/* ✅ Google Fonts MUST be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ✅ Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   BASE DESIGN TOKENS
+   ========================= */
+@layer base {
+  :root {
+    /* Monacos VIBRANT MIDNIGHT Theme */
+    /* Background: #1F1D2B */
+    --background: 248 19% 14%; 
+    --foreground: 0 0% 98%;
+
+    /* Card: #252836 */
+    --card: 229 19% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 229 19% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Neon Cyan #22D3EE */
+    --primary: 186 82% 53%;
+    --primary-foreground: 248 19% 14%;
+
+    /* Secondary: Neon Purple #C084FC */
+    --secondary: 270 95% 75%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 229 19% 22%;
+    --muted-foreground: 229 10% 65%;
+
+    /* Accent: Hot Pink #F472B6 */
+    --accent: 328 86% 70%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 229 19% 25%;
+    --input: 229 19% 25%;
+    --ring: 186 82% 53%;
+
+    --radius: 1.5rem; /* Softer, larger radius */
+
+    /* Health Status Colors (Vibrant) */
+    --health-good: 160 84% 39%;     /* #10B981 */
+    --health-moderate: 45 93% 47%;
+    --health-poor: 25 95% 50%;
+    --health-hazardous: 340 82% 52%;
+
+    /* Gradients */
+    /* Purple -> Pink */
+    --gradient-purple: linear-gradient(135deg, #B249F8 0%, #FF70AF 100%);
+    /* Cyan -> Blue */
+    --gradient-cyan: linear-gradient(135deg, #2AFADF 0%, #4C83FF 100%);
+    /* Card Gradient (Subtle) */
+    --gradient-card: linear-gradient(180deg, #252836 0%, #1F1D2B 100%);
+    
+    --glow-primary: 0 0 20px -5px rgba(34, 211, 238, 0.5);
+    --glow-purple: 0 0 20px -5px rgba(192, 132, 252, 0.5);
+    
+    /* Animations */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+  }
+}
+
+/* =========================
+   BASE ELEMENT STYLES
+   ========================= */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white;
+    font-family: 'Inter', sans-serif;
+    /* Clean background, no noise */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+@layer utilities {
+  .bg-gradient-purple {
+    background: var(--gradient-purple);
+  }
+  
+  .bg-gradient-cyan {
+    background: var(--gradient-cyan);
+  }
+
+  .glass-card {
+    background: var(--card); /* Solid but light dark */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  }
+  
+  /* Hover effects for interactive cards */
+  .hover-card {
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+  }
+  .hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--glow-primary);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #2AFADF, #4C83FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  /* Animation Utilities */
+  .fade-in-up {
+    animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+}
