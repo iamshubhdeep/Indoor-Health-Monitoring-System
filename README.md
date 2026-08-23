@@ -5,7 +5,6 @@
 
 **Monacos** is a comprehensive indoor environmental monitoring system designed to track, analyze, and improve your living space's health. It combines real-time sensor data with advanced AI insights to provide actionable recommendations.
 
-## 🚀 Key Features
 ## 🌐 Live Demo
 
 🎥 **Project Demo:**  
@@ -24,6 +23,8 @@ The Monacos Indoor Health Intelligence Hub is powered by an ESP32 microcontrolle
 <b>Front View</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <b>Top View</b>
 </p>
+
+## 🚀 Key Features
 
 ### 📊 Real-Time Dashboard
 - **Live Monitoring**: Visualize critical metrics including Temperature, Humidity, PM2.5, PM10, Noise, and Light levels.
